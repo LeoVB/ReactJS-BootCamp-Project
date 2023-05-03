@@ -29,8 +29,33 @@ const Task_listComponent = () => {
   }, [tasks])
 
 
-  const changeCompleted = (id) => {
-    console.log("To do: cambiar estado de tarea")
+  function completeTask(task){
+    console.log('Complete this task: ',task);
+    //cambia el estado de la tarea clickeada, por medio del setTask del useState
+    const index = tasks.indexOf(task);
+    //se hace copia del array
+    const tempTask = [...tasks] 
+    tempTask[index].completed = !tempTask[index].completed;
+    //se actualiza el state del componente con la nmueva lista de tasks
+    //la cual actualiza la iteracion dee las tareas para enseñar la tarea actualizada
+    setTasks(tempTask)
+
+  }
+
+  function deleteTask(task){
+    console.log('Complete this task: ',task);
+    const index = tasks.indexOf(task);
+    const tempTask = [...tasks] 
+    tempTask.splice(index,1)
+    setTasks(tempTask)
+  }
+
+
+  function addTask(task){
+    const index = tasks.indexOf(task);
+    const tempTask = [...tasks] 
+    tempTask.push(task)
+    setTasks(tempTask)
   }
 
   return (
@@ -58,15 +83,16 @@ const Task_listComponent = () => {
                   {/**Iterar lista de tareas */}
                   {tasks.map((task,index) => {
                     return (
-                      <TaskComponent key={index} task={task}></TaskComponent>
+                      <TaskComponent key={index} task={task} complete={completeTask} deleteT={deleteTask}></TaskComponent>
                     )
                   })}
 
                   
               </tbody>
             </table>
+            <TaskForm add={addTask}></TaskForm>
           </div>
-          <TaskForm></TaskForm>
+          
         </div>
 
 

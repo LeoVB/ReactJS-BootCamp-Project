@@ -9,6 +9,8 @@ import Ejemplo2 from './hooks/Ejemplo2';
 import ComponenteConContexto from './hooks/Ejemplo3'
 import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyled from './components/pure/GreetingSyled';
+import Father from './components/container/father';
+
 
 function App() {
   return (
@@ -54,9 +56,16 @@ function App() {
 
       {/**CLASE  7*/}
 
+      {/* <Task_listComponent></Task_listComponent> */}
+
+
+      {/**Clase 8 Gestion de eventos */}
+      {/* <Father></Father> */}
+
+
+       {/**CLASE  9*/}
+
       <Task_listComponent></Task_listComponent>
-
-
 
 
       {/*      </header> */}
