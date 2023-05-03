@@ -1,0 +1,31 @@
+.toggle{
+    height: 15px;
+    width: 30px;
+    border-radius: 50px;
+    margin: auto;
+    background-image: linear-gradient(rgb(10, 206, 27),rgb(121, 194, 137));
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle.night{
+    background-image: linear-gradient(rgb(236, 9, 40),rgb(156, 84, 100));
+
+}
+
+.notch{
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 0.5px;
+    left: 1px;
+    /* box-shadow: 0 3px 5px rgb(0, 245, 33); */
+    transition: all 0.3s ease;
+}
+
+.night> .notch{
+    /* box-shadow: 0 3px 5px rgb(29, 130, 170); */
+    transform: translate(14px,0);
+}
