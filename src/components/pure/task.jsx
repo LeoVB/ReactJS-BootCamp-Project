@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import PropTypes from 'prop-types'
 import { Task } from '../../models/task.class'
 import '../../styles/task.css'
 import { LEVELS } from '../../models/levels.enum'
+import Toggle from '../../Buttons'
 
 
 const TaskComponent = ({ task, complete, deleteT }) => {
@@ -15,7 +16,11 @@ const TaskComponent = ({ task, complete, deleteT }) => {
     }
   }, [task])
 
-
+  const [toggled, setToggled] = useState(false)
+  
+  function handleClick(){
+    setToggled((s)=> !s);
+  }
   /**Funcion que retorna un badge
    * dependiendo del nivel de la task
    */
@@ -59,8 +64,11 @@ const TaskComponent = ({ task, complete, deleteT }) => {
 
   /** funcion que retorna el icono según el estado de completacion de la tarea */
   function taskCompletedIcon() {
-    return task.completed ?
-        (<i onClick={ ()=> complete(task)} className='bi-toggle-on task-action' style={{ color: 'green' }}></i>) : (<i onClick={() => complete(task)} className='bi-toggle-off task-action' style={{ color: 'red' }}></i>)
+    // return task.completed ?
+    //     (<i onClick={ ()=> complete(task)} className='bi-toggle-on task-action' style={{ color: 'green' }}></i>)
+    //      :
+    //      (<i onClick={() => complete(task)} className='bi-toggle-off task-action' style={{ color: 'red' }}></i>)
+    
   }
 
 
@@ -76,13 +84,16 @@ const TaskComponent = ({ task, complete, deleteT }) => {
         {/**Ejecuta funcion que genera elemnto badge  */}
         {taskLevelBadge()}
       </td>
-      <td className='align-middle'>
+      <td className='align-middle iconsFlex'>
         {/**TO DO: sustituir por iconos */}
         {/* {task.completed ?
           (<i className='bi-toggle-on' style={{ color: 'green' }}></i>) : (<i className='bi-toggle-off' style={{ color: 'red' }}></i>)
         } */}
-        {taskCompletedIcon()}
-        <i onClick={() => deleteT(task)} className='bi-trash task-action' style={{ color: 'red' }}></i>
+
+        {/* {taskCompletedIcon()} */}
+        {/* <Toggle toggled={toggled} onClick={handleClick(); ()=> complete(task)}></Toggle> */}
+        <Toggle toggled={toggled} onClick={() => { handleClick(); complete(task); }}></Toggle>
+       <div> <i onClick={() => deleteT(task)} className='bi-trash task-action' style={{ color: 'red' }}></i></div>
       </td>
 
     </tr>
