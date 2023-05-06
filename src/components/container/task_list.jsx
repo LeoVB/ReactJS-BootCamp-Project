@@ -45,17 +45,25 @@ const Task_listComponent = () => {
   function deleteTask(task){
     console.log('Complete this task: ',task);
     const index = tasks.indexOf(task);
-    const tempTask = [...tasks] 
-    tempTask.splice(index,1)
-    setTasks(tempTask)
+    const tempTasks = [...tasks] 
+    tempTasks.splice(index,1)
+    setTasks(tempTasks)
   }
 
 
   function addTask(task){
     const index = tasks.indexOf(task);
-    const tempTask = [...tasks] 
-    tempTask.push(task)
-    setTasks(tempTask)
+    const tempTasks = [...tasks] 
+    tempTasks.push(task)
+    setTasks(tempTasks)
+  }
+
+  function handleClick(task){
+    const index = tasks.indexOf(task);
+    const tempTasks = [...tasks] 
+    const tempTask= tempTasks.at(index)
+    tempTasks.splice(index,0,tempTask)
+    setTasks(tempTasks)
   }
 
   return (
@@ -83,7 +91,7 @@ const Task_listComponent = () => {
                   {/**Iterar lista de tareas */}
                   {tasks.map((task,index) => {
                     return (
-                      <TaskComponent key={index} task={task} complete={completeTask} deleteT={deleteTask}></TaskComponent>
+                      <TaskComponent key={index} task={task} complete={completeTask} deleteT={deleteTask} toggleT={handleClick}></TaskComponent>
                     )
                   })}
 

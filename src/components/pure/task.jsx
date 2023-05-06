@@ -6,7 +6,7 @@ import { LEVELS } from '../../models/levels.enum'
 import Toggle from '../../Buttons'
 
 
-const TaskComponent = ({ task, complete, deleteT }) => {
+const TaskComponent = ({ task, complete, deleteT, toggleT }) => {
 
   useEffect(() => {
     console.log('Task created')
@@ -16,11 +16,7 @@ const TaskComponent = ({ task, complete, deleteT }) => {
     }
   }, [task])
 
-  const [toggled, setToggled] = useState(false)
-  
-  function handleClick(){
-    setToggled((s)=> !s);
-  }
+ 
   /**Funcion que retorna un badge
    * dependiendo del nivel de la task
    */
@@ -92,7 +88,7 @@ const TaskComponent = ({ task, complete, deleteT }) => {
 
         {/* {taskCompletedIcon()} */}
         {/* <Toggle toggled={toggled} onClick={handleClick(); ()=> complete(task)}></Toggle> */}
-        <Toggle toggled={toggled} onClick={() => { handleClick(); complete(task); }}></Toggle>
+        <Toggle toggled={task.completed} onClick={() => { toggleT(task); complete(task); }}></Toggle>
        <div> <i onClick={() => deleteT(task)} className='bi-trash task-action' style={{ color: 'red' }}></i></div>
       </td>
 
@@ -103,7 +99,8 @@ const TaskComponent = ({ task, complete, deleteT }) => {
 TaskComponent.propTypes = {
   task: PropTypes.instanceOf(Task).isRequired,  //reviusa que se reciba una Task
   complete: PropTypes.func.isRequired,
-  deleteT: PropTypes.func.isRequired
+  deleteT: PropTypes.func.isRequired,
+  toggleT: PropTypes.func.isRequired
 }
 
 export default TaskComponent
