@@ -11,6 +11,7 @@ import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyled from './components/pure/GreetingSyled';
 import Father from './components/container/father';
 import OptionalRender from './components/pure/OptionalRender';
+import RectanguloRGB from './components/pure/RectanguloRGB';
 
 
 function App() {
@@ -71,7 +72,10 @@ function App() {
       {/**Clase 11 */}
       {/**Ejemplos de renderizado condicional */}
 
-      <OptionalRender></OptionalRender>
+      {/* <OptionalRender></OptionalRender> */}
+
+      {/**Tarea de rectanguloRGB */}
+      <RectanguloRGB></RectanguloRGB>
 
       {/*      </header> */}
     </div>
