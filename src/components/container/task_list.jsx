@@ -7,7 +7,7 @@ import '../../styles/task.css'
 import TaskForm from '../pure/forms/TaskForm';
 
 
-const Task_listComponent = () => {
+const TaskListComponent = () => {
 
 
 
@@ -111,6 +111,6 @@ const Task_listComponent = () => {
   )
 }
 
-Task_listComponent.propTypes = {}
+TaskListComponent.propTypes = {}
 
-export default Task_listComponent
+export default TaskListComponent

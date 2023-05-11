@@ -10,6 +10,7 @@ import ComponenteConContexto from './hooks/Ejemplo3'
 import Ejemplo4 from './hooks/Ejemplo4';
 import GreetingStyled from './components/pure/GreetingSyled';
 import Father from './components/container/father';
+import OptionalRender from './components/pure/OptionalRender';
 
 
 function App() {
@@ -65,8 +66,12 @@ function App() {
 
        {/**CLASE  9*/}
 
-      <Task_listComponent></Task_listComponent>
+      {/* <Task_listComponent></Task_listComponent> */}
 
+      {/**Clase 11 */}
+      {/**Ejemplos de renderizado condicional */}
+
+      <OptionalRender></OptionalRender>
 
       {/*      </header> */}
     </div>
