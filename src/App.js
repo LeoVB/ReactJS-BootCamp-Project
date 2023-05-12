@@ -65,7 +65,7 @@ function App() {
       {/* <Father></Father> */}
 
 
-       {/**CLASE  9*/}
+      {/**CLASE  9*/}
 
       {/* <Task_listComponent></Task_listComponent> */}
 
@@ -75,8 +75,12 @@ function App() {
       {/* <OptionalRender></OptionalRender> */}
 
       {/**Tarea de rectanguloRGB */}
-      <RectanguloRGB></RectanguloRGB>
+      {/* <RectanguloRGB></RectanguloRGB> */}
 
+      {/**Clase 12 */}
+      <Task_listComponent></Task_listComponent>
+
+      
       {/*      </header> */}
     </div>
   );

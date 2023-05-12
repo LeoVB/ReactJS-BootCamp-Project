@@ -66,6 +66,11 @@ const TaskListComponent = () => {
     setTasks(tempTasks)
   }
 
+  function GenTable(){
+    
+  }
+  
+
   return (
     <div>
 
