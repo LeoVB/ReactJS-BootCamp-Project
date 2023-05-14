@@ -88,7 +88,10 @@ const TaskComponent = ({ task, complete, deleteT, toggleT }) => {
 
         {/* {taskCompletedIcon()} */}
         {/* <Toggle toggled={toggled} onClick={handleClick(); ()=> complete(task)}></Toggle> */}
+        <span className='mx-1 mt-1'>
         <Toggle toggled={task.completed} onClick={() => { toggleT(task); complete(task); }}></Toggle>
+        </span>
+        
        <div> <i onClick={() => deleteT(task)} className='bi-trash task-action' style={{ color: 'red' }}></i></div>
       </td>
 
