@@ -22,7 +22,9 @@ const TaskListComponent = () => {
   //Control del ciclo de vida del componente
   useEffect(() => {
     console.log('Task state has been modified')
-    setLoading(false);
+    setTimeout (()=>{
+      setLoading(false);
+    }, 2000);
     return () => {
       console.log('TaskList component is going to unmount')
     }
@@ -91,7 +93,25 @@ const TaskListComponent = () => {
     )
   }
 
-  let tasksTable = <GenTable></GenTable>
+
+  let tasksTable
+  if (tasks.length > 0) {
+    tasksTable = <GenTable></GenTable>
+  }
+  else {
+    tasksTable =(
+      <div>
+        <h3>There are no tasks to show</h3>
+        <h4>Please create a new task</h4>
+      </div>)
+  }
+
+
+  const loadingStyle = {
+    color: 'grey',
+    fontSize:'30px'
+  }
+
   return (
     <div>
 
@@ -104,8 +124,8 @@ const TaskListComponent = () => {
             </h5>
           </div>
           <div className='card-body' data-mdb-perfect-scrollbar='true' style={{ position: 'relative', height: '400px' }}>
-            {tasksTable}
-            <TaskForm add={addTask}></TaskForm>
+            {loading ? (<p style={loadingStyle}>Loading tasks</p>) : tasksTable}
+            <TaskForm add={addTask} length={tasks.length}></TaskForm>
           </div>
 
         </div>

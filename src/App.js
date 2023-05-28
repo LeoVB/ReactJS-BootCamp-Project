@@ -12,6 +12,8 @@ import GreetingStyled from './components/pure/GreetingSyled';
 import Father from './components/container/father';
 import OptionalRender from './components/pure/OptionalRender';
 import RectanguloRGB from './components/pure/RectanguloRGB';
+import LoginFormik from './components/pure/forms/LoginFormik';
+import RegisterFormik from './components/pure/forms/RegisterFormik';
 
 
 function App() {
@@ -78,9 +80,16 @@ function App() {
       {/* <RectanguloRGB></RectanguloRGB> */}
 
       {/**Clase 12 */}
-      <Task_listComponent></Task_listComponent>
+      {/* <Task_listComponent></Task_listComponent> */}
 
-      
+      {/**Clase 13 */}
+      {/**Ejemplos uso de Formik y Yup */}
+      {/* <LoginFormik></LoginFormik> */}
+
+
+      {/**Clae 14 */}
+      <RegisterFormik></RegisterFormik>
+
       {/*      </header> */}
     </div>
   );
