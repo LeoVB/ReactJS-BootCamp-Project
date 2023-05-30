@@ -14,6 +14,9 @@ import OptionalRender from './components/pure/OptionalRender';
 import RectanguloRGB from './components/pure/RectanguloRGB';
 import LoginFormik from './components/pure/forms/LoginFormik';
 import RegisterFormik from './components/pure/forms/RegisterFormik';
+import AsyncExample from './components/pure/AsyncExample';
+import ObservableExample from './components/pure/ObservableExample';
+import FetchExample from './components/pure/FetchExample';
 
 
 function App() {
@@ -88,7 +91,16 @@ function App() {
 
 
       {/**Clae 14 */}
-      <RegisterFormik></RegisterFormik>
+      {/* <RegisterFormik></RegisterFormik> */}
+
+
+      {/**Async examples */}
+      {/* <AsyncExample></AsyncExample> */}
+
+      {/**Observable with rxjs */}
+      {/* <ObservableExample></ObservableExample> */}
+
+      <FetchExample></FetchExample>
 
       {/*      </header> */}
     </div>
