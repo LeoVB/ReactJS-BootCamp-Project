@@ -17,6 +17,9 @@ import RegisterFormik from './components/pure/forms/RegisterFormik';
 import AsyncExample from './components/pure/AsyncExample';
 import ObservableExample from './components/pure/ObservableExample';
 import FetchExample from './components/pure/FetchExample';
+import { AxiosError } from 'axios';
+import AxiosExample from './components/pure/AxiosExample';
+import AxiosChuckNorrisJoke from './components/pure/AxiosChuckNorrisJoke';
 
 
 function App() {
@@ -100,7 +103,13 @@ function App() {
       {/**Observable with rxjs */}
       {/* <ObservableExample></ObservableExample> */}
 
-      <FetchExample></FetchExample>
+      {/* <FetchExample></FetchExample> */}
+
+      {/* <AxiosExample></AxiosExample> */}
+
+
+      {/**Chuck Norris homework */}
+      <AxiosChuckNorrisJoke></AxiosChuckNorrisJoke>
 
       {/*      </header> */}
     </div>

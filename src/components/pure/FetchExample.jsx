@@ -3,7 +3,7 @@ import { getAllUsers } from '../../services/fetchService'
 import { getAllPagedUsers } from '../../services/fetchService'
 import { getUserDetails } from '../../services/fetchService'
 import { height } from '@mui/system'
-
+import { loginPetition } from '../../services/fetchService'
 
 const FetchExample = () => {
 
@@ -68,8 +68,22 @@ const FetchExample = () => {
     }
 
 
+    const login = () =>{
+        loginPetition('eve.holt@reqres.in', 'cityslicka')
+        .then((response) => {
+            console.log('TOKEN', response.token)
+            sessionStorage.setItem('Token',response.token)
+
+        })
+        .catch((error) => alert(`Error while login user: ${error}`))
+        .finally(() => {
+            console.log('User logged ')
+        })
+    }
+
     return (
         <div>
+        <button onClick={login}> Login</button>
             <h2>Users:</h2>
             {users.map((user, index) =>
             (<p key={index} onClick={() => obtainSpecificUserDetails(user.id)}>
@@ -95,11 +109,11 @@ const FetchExample = () => {
                             <p>Name: {selectedUser.first_name}</p>
                             <p>Last name: {selectedUser.last_name}</p>
                             <p>Email: {selectedUser.email}</p>
-                            <img alt='Avatar' src={selectedUser.avatar} style={{height :'50px', width:'50px'}}/>
+                            <img alt='Avatar' src={selectedUser.avatar} style={{height :'150px', width:'150px'}}/>
                         </div>
                     ): 
                     
-                    (<div>Nothing here</div>)
+                    (<div>Nothing to show here</div>)
 
                     }
 
