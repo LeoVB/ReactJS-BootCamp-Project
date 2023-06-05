@@ -32,7 +32,13 @@ const AxiosExample = () => {
                             <h2>{user.name.title} {user.name.first} {user.name.last}</h2>
                             <h3>{user.email}</h3>
                             <img alt='Avatar' src={user.picture.large} />
+                            <div>
+                                <button onClick={obtainUser}>
+                                    Generate new user
+                                </button>
+                            </div>
                         </div>
+
                     )
                     :
                     (

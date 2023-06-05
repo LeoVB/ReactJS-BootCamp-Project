@@ -20,6 +20,7 @@ import FetchExample from './components/pure/FetchExample';
 import { AxiosError } from 'axios';
 import AxiosExample from './components/pure/AxiosExample';
 import AxiosChuckNorrisJoke from './components/pure/AxiosChuckNorrisJoke';
+import AxiosCRUDExample from './components/pure/AxiosCRUDExample';
 
 
 function App() {
@@ -109,7 +110,16 @@ function App() {
 
 
       {/**Chuck Norris homework */}
-      <AxiosChuckNorrisJoke></AxiosChuckNorrisJoke>
+      {/* <AxiosChuckNorrisJoke></AxiosChuckNorrisJoke> */}
+
+
+      {/**CRUD Example */}
+      <AxiosCRUDExample></AxiosCRUDExample>
+
+
+      {/**Avance de proyecto */}
+     
+      
 
       {/*      </header> */}
     </div>
