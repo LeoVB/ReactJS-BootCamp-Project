@@ -87,7 +87,7 @@ function App() {
       {/* <RectanguloRGB></RectanguloRGB> */}
 
       {/**Clase 12 */}
-      {/* <Task_listComponent></Task_listComponent> */}
+      <Task_listComponent></Task_listComponent>
 
       {/**Clase 13 */}
       {/**Ejemplos uso de Formik y Yup */}
@@ -114,7 +114,7 @@ function App() {
 
 
       {/**CRUD Example */}
-      <AxiosCRUDExample></AxiosCRUDExample>
+      {/* <AxiosCRUDExample></AxiosCRUDExample> */}
 
 
       {/**Avance de proyecto */}

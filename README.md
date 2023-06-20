@@ -1,3 +1,27 @@
+# Generating PWA functionality to an existing app
+What do we need to do to make this a PWA?
+1. Package.json -> Install all the workbox dependencies
+ "workbox-background-sync": "^6.6.0",
+    "workbox-broadcast-update": "^6.6.0",
+    "workbox-cacheable-response": "^6.6.0",
+    "workbox-core": "^6.6.0",
+    "workbox-expiration": "^6.6.0",
+    "workbox-google-analytics": "^6.6.0",
+    "workbox-navigation-preload": "^6.6.0",
+    "workbox-precaching": "^6.6.0",
+    "workbox-range-requests": "^6.6.0",
+    "workbox-routing": "^6.6.0",
+    "workbox-strategies": "^6.6.0",
+    "workbox-streams": "^6.6.0"
+2. Create the files related to the service worker, because for this project we didnt use the template to create de WPA
+   
+    Had to copy and paste the files from another project
+
+3. Import the service worker on index.js
+    Simple import
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
